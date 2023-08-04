@@ -1,9 +1,9 @@
 import addActiveClass from "./assets/scripts/activeMenuItem";
 import serviceButtons from "./assets/scripts/serviceButtons";
-// import burgerMenu from "./assets/scripts/burgerMenu";
 import activeAccordion from "./assets/scripts/activeAccordion";
+import activeCity from "./assets/scripts/activeCity";
 
 addActiveClass();
-// burgerMenu();
 serviceButtons();
 activeAccordion();
+activeCity();

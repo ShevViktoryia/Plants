@@ -10,6 +10,16 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./assets/data/citiesData.js":
+/*!***********************************!*\
+  !*** ./assets/data/citiesData.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst citiesData = [\r\n  {\r\n    id: 1,\r\n    city: 'Yonkers, NY',\r\n    phone: '+1\t914\t678 0003',\r\n    address: '511 Warburton Ave'\r\n  },\r\n  {\r\n    id: 2,\r\n    city: 'Canandaigua, NY',\r\n    phone: '+1\t585\t393 0001',\r\n    address: '151 Charlotte Street'\r\n  },\r\n  {\r\n    id: 3,\r\n    city: 'Sherrill, NY',\r\n    phone: '+1\t315\t908 0004',\r\n    address: '14 WEST Noyes BLVD'\r\n  },\r\n  {\r\n    id: 4,\r\n    city: 'New York City',\r\n    phone: '+1\t212\t456 0002',\r\n    address: '9 East 91st Street'\r\n  }\r\n];\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (citiesData);\n\n//# sourceURL=webpack://plants/./assets/data/citiesData.js?");
+
+/***/ }),
+
 /***/ "./assets/scripts/activeAccordion.js":
 /*!*******************************************!*\
   !*** ./assets/scripts/activeAccordion.js ***!
@@ -17,6 +27,16 @@
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ activeAccordion)\n/* harmony export */ });\nfunction activeAccordion() {\r\n  let acc = [...document.querySelectorAll('.price_category')];\r\n\r\n  acc.forEach(item => {\r\n    item.addEventListener(\"click\", () => {\r\n      item.classList.toggle('active_category');\r\n      let panel = item.nextElementSibling;\r\n      panel.style.display === 'block' ? panel.style.display = 'none' : panel.style.display = 'block';\r\n    });\r\n  });\r\n}\n\n//# sourceURL=webpack://plants/./assets/scripts/activeAccordion.js?");
+
+/***/ }),
+
+/***/ "./assets/scripts/activeCity.js":
+/*!**************************************!*\
+  !*** ./assets/scripts/activeCity.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ activeCity)\n/* harmony export */ });\n/* harmony import */ var _data_citiesData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/citiesData */ \"./assets/data/citiesData.js\");\n\r\n\r\nfunction activeCity() {\r\n  let selectCity = document.querySelector('.city');\r\n  let city_block = document.querySelector('.city_block');\r\n  selectCity.addEventListener(\"change\", e => {\r\n    _data_citiesData__WEBPACK_IMPORTED_MODULE_0__[\"default\"].forEach(item => {\r\n      if(e.target.value == item.city) {\r\n        city_block.innerHTML = '';\r\n        city_block.style.display = 'flex';\r\n        const city = document.createElement('p');\r\n        city.className = 'city_name';\r\n        const city_span = document.createElement('span');\r\n        city_span.textContent = 'City:';\r\n        city.textContent = item.city;\r\n        city.prepend(city_span);\r\n        const city_phone = document.createElement('p');\r\n        city_phone.className = 'city_phone';\r\n        const phone_span = document.createElement('span');\r\n        phone_span.textContent = 'Phone:';\r\n        city_phone.innerHTML = item.phone;\r\n        city_phone.prepend(phone_span);\r\n        const city_address = document.createElement('p');\r\n        city_address.className = 'city_address';\r\n        const address_span = document.createElement('span');\r\n        address_span.textContent = 'Office address:';\r\n        city_address.textContent = item.address;\r\n        city_address.prepend(address_span);\r\n        const call_btn = document.createElement('a');\r\n        call_btn.className = 'call_btn';\r\n        call_btn.setAttribute('href', `tel:${item.phone}`);\r\n        call_btn.textContent = 'Call us';\r\n        city_block.append(city);\r\n        city_block.append(city_phone);\r\n        city_block.append(city_address);\r\n        city_block.append(call_btn);\r\n      }\r\n    })\r\n  });\r\n}\n\n//# sourceURL=webpack://plants/./assets/scripts/activeCity.js?");
 
 /***/ }),
 
@@ -46,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _assets_scripts_activeMenuItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/scripts/activeMenuItem */ \"./assets/scripts/activeMenuItem.js\");\n/* harmony import */ var _assets_scripts_serviceButtons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/scripts/serviceButtons */ \"./assets/scripts/serviceButtons.js\");\n/* harmony import */ var _assets_scripts_activeAccordion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/scripts/activeAccordion */ \"./assets/scripts/activeAccordion.js\");\n\r\n\r\n// import burgerMenu from \"./assets/scripts/burgerMenu\";\r\n\r\n\r\n(0,_assets_scripts_activeMenuItem__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n// burgerMenu();\r\n(0,_assets_scripts_serviceButtons__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_assets_scripts_activeAccordion__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n//# sourceURL=webpack://plants/./script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _assets_scripts_activeMenuItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/scripts/activeMenuItem */ \"./assets/scripts/activeMenuItem.js\");\n/* harmony import */ var _assets_scripts_serviceButtons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/scripts/serviceButtons */ \"./assets/scripts/serviceButtons.js\");\n/* harmony import */ var _assets_scripts_activeAccordion__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/scripts/activeAccordion */ \"./assets/scripts/activeAccordion.js\");\n/* harmony import */ var _assets_scripts_activeCity__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/scripts/activeCity */ \"./assets/scripts/activeCity.js\");\n\r\n\r\n\r\n\r\n\r\n(0,_assets_scripts_activeMenuItem__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_assets_scripts_serviceButtons__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_assets_scripts_activeAccordion__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n(0,_assets_scripts_activeCity__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n\n//# sourceURL=webpack://plants/./script.js?");
 
 /***/ })
 
