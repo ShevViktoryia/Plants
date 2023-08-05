@@ -825,6 +825,10 @@ h1 > span {
   .city {
     order: -1;
     margin-top: 100px;
+    margin-bottom: 0px;
+  }
+
+  .city_block {
     margin-bottom: 250px;
   }
 
