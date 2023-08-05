@@ -295,13 +295,13 @@ h1 > span {
 .planting:active, .contact_us:active {
   color: var(--white);
   background-color: var(--orange);
-  transition: 0.9s ease;
+  transition: background-color 0.9s ease;
 }
 
 .active_button {
   color: var(--white);
   background-color: var(--orange);
-  transition: 0.9s ease;
+  transition: background-color 0.9s ease;
 }
 
 .service_list {
@@ -320,10 +320,12 @@ h1 > span {
 
 .inactive_service {
   filter: blur(2px);
+  transition: filter 0.9s ease;
 }
 
 .active_service {
   filter: none;
+  transition: filter 0.9s ease;
 }
 
 .service_img {
@@ -1101,9 +1103,13 @@ h1 > span {
 
   .city {
     margin-top: 81px;
-    margin-bottom: 132px;
+    margin-bottom: 0px;
     width: 300px;
     background-position: calc(100% - 29px) calc(1em + 4px), calc(100% - 22px) calc(1em + -2px), calc(100% - 0.5em) 0.5em;
+  }
+
+  .city_block {
+    margin-bottom: 132px;
   }
 
   .contacts_block > img {
